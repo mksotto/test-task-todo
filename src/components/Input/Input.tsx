@@ -1,6 +1,5 @@
 import type { ComponentProps, FC } from 'react';
 import clsx from 'clsx';
-import { motion } from 'motion/react';
 import styles from './Input.module.css';
 
 type Props = {
@@ -16,10 +15,7 @@ type Props = {
 | 'max'>;
 
 export const Input: FC<Props> = ({ block, error, type, disabled, ...props }) => (
-    <motion.input
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
+    <input
         type={type || 'text'}
         disabled={disabled}
         aria-disabled={disabled}

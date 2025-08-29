@@ -1,5 +1,7 @@
 .navItem {
     position: relative;
+    padding: 8px;
+    cursor: pointer;
 }
 
 .radio {
@@ -11,14 +13,12 @@
 
 .label {
     position: relative;
-    font-size: 14px;
-    line-height: 1.5;
     z-index: 1;
 }
 
 .shape {
     position: absolute;
     inset: 0;
-    background: rgb(173, 206, 255);
-    border-radius: 4px;
+    background: var(--primary-muted);
+    border-radius: 12px;
 }

@@ -34,7 +34,7 @@ const SegmentedItem: FC<SegmentedItemProps> = ({ item, selected, onChange }) => 
             />
             {selected && (
                 <motion.div
-                    layoutId="havigationShape"
+                    layoutId="segmentedShape"
                     transition={{ type: 'spring', duration: 0.5 }}
                     className={styles.shape}
                 />

@@ -42,9 +42,10 @@ export const App = () => {
     return (
         <Flex justify="center" align="center" className={styles.app}>
             <Section>
-                <h2>Todos</h2>
+                <h1 className={styles.title}>Todos</h1>
                 <Flex gap={8}>
                     <Input
+                        placeholder="Add new task"
                         value={value}
                         onChange={e => setValue(e.target.value)}
                     />
@@ -53,6 +54,7 @@ export const App = () => {
                             if (!value.trim())
                                 return;
                             add(value);
+                            setValue('');
                         }}
                     >
                         Add
@@ -64,7 +66,7 @@ export const App = () => {
                     ))}
                 </ul>
 
-                <Flex justify="between">
+                <Flex justify="between" align="center" gap={16}>
                     <div>
                         {tasks.filter(t => !t.completed).length}
                         {' '}
@@ -75,9 +77,9 @@ export const App = () => {
                         value={filtering}
                         onChange={setFiltering}
                     />
-                    <button type="button" onClick={removeCompleted}>
-                        remove completed
-                    </button>
+                    <Button variant="ghost" onClick={removeCompleted}>
+                        Clear completed
+                    </Button>
                 </Flex>
             </Section>
         </Flex>

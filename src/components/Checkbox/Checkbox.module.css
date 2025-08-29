@@ -3,14 +3,14 @@
     width: 16px;
     height: 16px;
     border-radius: 2px;
-    border: 1px solid #000;
-    background-color: #fff;
+    border: 1px solid var(--background);
+    background-color: var(--foreground);
     position: relative;
     cursor: pointer;
 
     &:disabled {
         cursor: not-allowed;
-        background-color: #676767;
+        background-color: var(--secondary);
     }
 
     &:checked::before {

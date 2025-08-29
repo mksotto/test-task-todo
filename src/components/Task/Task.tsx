@@ -35,7 +35,7 @@ export const Task: FC<Props> = ({ task }) => {
                 />
                 <div>{task.title}</div>
             </Flex>
-            <Button variant="outlined" onClick={() => remove(task)}>X</Button>
+            <Button variant="ghost" onClick={() => remove(task)}>&#9747;</Button>
         </li>
     );
 };

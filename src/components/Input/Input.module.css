@@ -6,23 +6,24 @@
     min-width: 260px;
     height: 48px;
     border-radius: 16px;
-    border: 1px solid #000;
-    background-color: white;
+    border: 1px solid var(--background);
+    background-color: var(--foreground);
     padding: 0 16px;
-    color: #5869d1;
+    color: var(--primary);
     cursor: pointer;
+    flex: 1 0;
 
     &:focus-visible {
-        border-width: 2px;
+        border-color: var(--primary);
         outline: none;
     }
 
     &::placeholder {
-        color: #7982d1;
+        color: var(--primary-muted);
     }
 
     &:disabled {
         cursor: not-allowed;
-        background-color: #676767;
+        background-color: var(--secondary);
     }
 }

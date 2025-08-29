@@ -5,5 +5,12 @@
 }
 
 :root {
+    font-family: 'Ubuntu Sans', sans-serif;
     background-color: #000;
+
+    --background: #000;
+    --foreground: #fff;
+    --primary: #5869d1;
+    --primary-muted: #7982d1;
+    --secondary: #676767;
 }

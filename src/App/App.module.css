@@ -3,8 +3,16 @@
     height: 100vh;
 }
 
+.title {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: normal;
+    text-align: center;
+}
+
 .tasks {
     display: flex;
     flex-direction: column;
     flex: 1 0;
+    gap: 8px;
 }
