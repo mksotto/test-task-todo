@@ -1,9 +1,7 @@
 import type { TTask } from '@/types/types';
 import { useCallback, useState } from 'react';
-import { Flex, Input, Section, Task } from '@/components';
-import { Button } from '@/components/Button/Button';
-import { Segmented } from '@/components/Segmented/Segmented';
-import { useTasks } from '@/providers/useTasks';
+import { Button, Flex, Input, Section, Segmented, Task } from '@/components';
+import { useTasks } from '@/providers';
 import styles from './App.module.css';
 
 const filteringOptions = [

@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from '@/App/App';
-import { TasksProvider } from '@/providers/useTasks';
+import { TasksProvider } from '@/providers';
 import '@/index.css';
 
 createRoot(document.getElementById('root')!).render(

@@ -1,7 +1,7 @@
 import type { TTask } from '@/types/types';
 import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { TasksProvider, useTasks } from '@/providers/useTasks';
+import { TasksProvider, useTasks } from '@/providers';
 
 const mockTask: TTask = {
     id: '1',

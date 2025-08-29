@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { TTask } from '@/types/types';
 import { motion } from 'motion/react';
 import { Button, Checkbox, Flex } from '@/components';
-import { useTasks } from '@/providers/useTasks';
+import { useTasks } from '@/providers';
 import styles from './Task.module.css';
 
 type Props = {
