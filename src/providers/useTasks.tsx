@@ -1,13 +1,14 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
-import type { TTask } from '@/types/types.ts';
+import type { TTask } from '@/types/types';
 import { createContext, use, useCallback, useMemo, useState } from 'react';
-
-import { LOCAL_STORAGE_KEY } from '@/constants/constants.ts';
+import { LOCAL_STORAGE_KEY } from '@/constants/constants';
+import { generateId } from '@/utils/generateId';
 
 type TTasksContext = {
     tasks: TTask[];
     setTasks: Dispatch<SetStateAction<TTask[]>>;
     add: (title: TTask['title']) => void;
+    toggleCompleted: (task: TTask, completed: boolean) => void;
     remove: (task: TTask) => void;
     removeCompleted: VoidFunction;
 };
@@ -39,8 +40,12 @@ const TasksProvider = ({ children }: PropsWithChildren) => {
     }, []);
 
     const add: TTasksContext['add'] = useCallback((title) => {
-        const id = crypto.randomUUID() || new Date().toISOString();
+        const id = generateId();
         updateTasks(prev => [...prev, { title, completed: false, id }]);
+    }, [updateTasks]);
+
+    const toggleCompleted: TTasksContext['toggleCompleted'] = useCallback((task, value) => {
+        updateTasks(prev => prev.map(t => t.id === task.id ? { ...t, completed: value } : t));
     }, [updateTasks]);
 
     const remove: TTasksContext['remove'] = useCallback((task) => {
@@ -55,9 +60,10 @@ const TasksProvider = ({ children }: PropsWithChildren) => {
         tasks,
         setTasks: updateTasks,
         add,
+        toggleCompleted,
         remove,
         removeCompleted
-    }), [tasks, updateTasks, add, remove, removeCompleted]);
+    }), [tasks, updateTasks, add, toggleCompleted, remove, removeCompleted]);
 
     return <TasksContext value={value}>{children}</TasksContext>;
 };

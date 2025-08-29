@@ -1,5 +1,6 @@
-import type { ChangeEventHandler, FC } from 'react';
-import type { TTask } from '@/types/types.ts';
+import type { FC } from 'react';
+import type { TTask } from '@/types/types';
+import { motion } from 'motion/react';
 import { Button, Checkbox, Flex } from '@/components';
 import { useTasks } from '@/providers/useTasks';
 import styles from './Task.module.css';
@@ -9,33 +10,22 @@ type Props = {
 };
 
 export const Task: FC<Props> = ({ task }) => {
-    const { setTasks, remove } = useTasks();
-    const handleCompleteChange: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
-        setTasks((prev) => {
-            return prev.map((t) => {
-                if (t.id === task.id) {
-                    return ({
-                        ...task,
-                        completed: target.checked
-                    });
-                }
-                else {
-                    return t;
-                }
-            });
-        });
-    };
+    const { remove, toggleCompleted } = useTasks();
 
     return (
-        <li className={styles.task}>
+        <motion.li
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className={styles.task}
+        >
             <Flex align="center" gap={8}>
                 <Checkbox
                     checked={task.completed}
-                    onChange={handleCompleteChange}
+                    onChange={({ target }) => toggleCompleted(task, target.checked)}
                 />
                 <div>{task.title}</div>
             </Flex>
             <Button variant="ghost" onClick={() => remove(task)}>&#9747;</Button>
-        </li>
+        </motion.li>
     );
 };
