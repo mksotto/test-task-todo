@@ -1,0 +1,9 @@
+.section {
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #fff;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,0 +1,32 @@
+.button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    border-radius: 16px;
+    padding: 0 16px;
+    cursor: pointer;
+
+    &[data-variant='primary'] {
+        border: 1px solid #5869d1;
+        background-color: #5869d1;
+        color: #fff;
+    }
+
+    &[data-variant='outlined'] {
+        background-color: transparent;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    &:focus-visible {
+        border: 2px solid #676767;
+        outline: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: #676767;
+    }
+}

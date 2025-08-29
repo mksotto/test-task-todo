@@ -1,0 +1,28 @@
+.input {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 260px;
+    height: 48px;
+    border-radius: 16px;
+    border: 1px solid #000;
+    background-color: white;
+    padding: 0 16px;
+    color: #5869d1;
+    cursor: pointer;
+
+    &:focus-visible {
+        border-width: 2px;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #7982d1;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: #676767;
+    }
+}

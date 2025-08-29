@@ -1,0 +1,10 @@
+.app {
+    width: 100%;
+    height: 100vh;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+}

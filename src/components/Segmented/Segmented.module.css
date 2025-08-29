@@ -1,0 +1,24 @@
+.navItem {
+    position: relative;
+}
+
+.radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.label {
+    position: relative;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    inset: 0;
+    background: rgb(173, 206, 255);
+    border-radius: 4px;
+}

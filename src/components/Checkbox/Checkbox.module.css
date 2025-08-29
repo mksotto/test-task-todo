@@ -1,0 +1,30 @@
+.checkbox {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid #000;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: #676767;
+    }
+
+    &:checked::before {
+        content: '';
+        background-image: url('./svg/check.svg');
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 8px;
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+}
